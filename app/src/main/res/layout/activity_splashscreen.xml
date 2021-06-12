@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="#0c1c43"
+    android:layout_height="match_parent"
+    tools:context=".splashscreen">
+
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:id="@+id/head"
+        android:src="@drawable/splashicon"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/head"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/lovers_quarrel"
+        android:gravity="center"
+        android:text="Your book of Identities"
+        android:textColor="#FFFFFF"
+        android:textSize="40sp" />
+
+</RelativeLayout>

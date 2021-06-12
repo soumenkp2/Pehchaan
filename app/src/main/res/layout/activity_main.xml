@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ECF9FB"
+    tools:context=".MainActivity">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:id="@+id/container"
+        android:layout_height="match_parent"
+        android:layout_above="@id/linear"/>
+
+
+
+
+
+
+
+    <LinearLayout
+        android:id="@+id/linear"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true">
+
+        <ImageView
+            android:id="@+id/main_feed"
+            android:padding="6dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/main"
+            android:layout_weight="1"/>
+
+        <ImageView
+            android:id="@+id/dialpad"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/dialpad"
+            android:padding="6dp"
+            android:layout_weight="1"/>
+
+        <ImageView
+            android:id="@+id/book"
+            android:src="@drawable/book"
+            android:layout_width="match_parent"
+            android:padding="6dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
+
+        <ImageView
+            android:id="@+id/emergency"
+            android:src="@drawable/emergencyicon"
+            android:padding="6dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/linearup"
+        android:layout_width="match_parent"
+        android:layout_above="@id/linear"
+        android:layout_height="33dp"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="false">
+
+        <TextView
+            android:id="@+id/main_feedup"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text=" "
+            android:gravity="center"
+            android:fontFamily="@font/josefin_sans_semibold"
+            android:padding="6dp"
+            android:src="@drawable/main" />
+
+        <TextView
+            android:id="@+id/dialup"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/dialpad"
+            android:text=" "
+            android:fontFamily="@font/josefin_sans_semibold"
+            android:gravity="center"
+            android:padding="6dp"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:id="@+id/bookup"
+            android:src="@drawable/book"
+            android:layout_width="match_parent"
+            android:text=" "
+            android:gravity="center"
+            android:padding="6dp"
+            android:fontFamily="@font/josefin_sans_semibold"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:id="@+id/emergencyup"
+            android:src="@drawable/emergency"
+            android:padding="6dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text=" "
+            android:fontFamily="@font/josefin_sans_semibold"
+            android:gravity="center"
+            android:layout_weight="1"/>
+
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>

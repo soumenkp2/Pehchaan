@@ -1,0 +1,496 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".homefragment">
+
+   <ScrollView
+       android:layout_width="match_parent"
+       android:layout_height="match_parent">
+
+
+
+       <RelativeLayout
+           android:layout_width="match_parent"
+           android:layout_height="match_parent">
+
+
+           <ImageView
+               android:layout_width="80dp"
+               android:id="@+id/toggle"
+               android:layout_marginTop="15dp"
+               android:paddingLeft="10dp"
+               android:paddingBottom="45dp"
+               android:layout_height="80dp"
+               android:paddingRight="20dp"
+               android:src="@drawable/toggle"/>
+
+
+
+           <ImageView
+               android:layout_width="match_parent"
+               android:layout_height="370dp"
+               android:id="@+id/mainheader"
+               android:src="@drawable/mainheader"/>
+
+           <ImageView
+               android:layout_width="match_parent"
+               android:layout_height="150dp"
+               android:id="@+id/head"
+               android:src="@drawable/header"/>
+
+           <TextView
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:id="@+id/descript"
+               android:layout_below="@+id/head"
+               android:layout_marginTop="10dp"
+               android:fontFamily="@font/lovers_quarrel"
+               android:gravity="center"
+               android:text="Your book of Identities"
+               android:textColor="#0c1c43"
+               android:textSize="29sp" />
+
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="110dp"
+               android:layout_marginTop="50dp"
+               android:orientation="horizontal"
+               android:layout_below="@+id/descript">
+
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="match_parent"
+                   android:orientation="vertical"
+                   android:layout_weight="1">
+
+                   <ImageView
+                       android:layout_width="match_parent"
+                       android:layout_weight="1"
+                       android:src="@drawable/add"
+                       android:id="@+id/addcontacts"
+                       android:padding="15dp"
+                       android:layout_height="match_parent"/>
+
+
+                   <TextView
+                       android:layout_width="match_parent"
+                       android:layout_weight="3"
+                       android:text="Add Contact"
+                       android:textSize="15sp"
+                       android:textColor="#0B2A3C"
+                       android:fontFamily="@font/josefin_sans_semibold"
+                       android:gravity="center"
+                       android:layout_height="match_parent"/>
+
+               </LinearLayout>
+
+
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="match_parent"
+                   android:orientation="vertical"
+                   android:layout_weight="1">
+
+                   <ImageView
+                       android:layout_width="match_parent"
+                       android:layout_weight="1"
+                       android:src="@drawable/logs"
+                       android:id="@+id/logs"
+                       android:padding="10dp"
+                       android:layout_height="match_parent"/>
+
+
+                   <TextView
+                       android:layout_width="match_parent"
+                       android:layout_weight="3"
+                       android:text="View CallLogs"
+                       android:textColor="#0B2A3C"
+                       android:gravity="center"
+                       android:textSize="15sp"
+                       android:fontFamily="@font/josefin_sans_semibold"
+                       android:layout_height="match_parent"/>
+
+               </LinearLayout>
+
+
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="match_parent"
+                   android:orientation="vertical"
+                   android:layout_weight="1">
+
+                   <ImageView
+                       android:layout_width="match_parent"
+                       android:layout_weight="1"
+                       android:padding="15dp"
+                       android:src="@drawable/emergencyicon"
+                       android:id="@+id/emg"
+                       android:layout_height="match_parent"/>
+
+
+                   <TextView
+                       android:layout_width="match_parent"
+                       android:layout_weight="3"
+                       android:text="Emergency"
+                       android:gravity="center"
+                       android:textColor="#0B2A3C"
+                       android:textSize="15sp"
+                       android:fontFamily="@font/josefin_sans_semibold"
+                       android:layout_height="match_parent"/>
+
+               </LinearLayout>
+
+
+
+
+           </LinearLayout>
+
+           <androidx.cardview.widget.CardView
+               android:layout_width="match_parent"
+               android:layout_height="250dp"
+               app:cardCornerRadius="50dp"
+               app:cardBackgroundColor="#ECF9FB"
+               android:id="@+id/card1"
+               android:layout_below="@+id/mainheader">
+
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:orientation="vertical"
+                   android:layout_height="match_parent">
+
+                   <TextView
+                       android:layout_width="match_parent"
+                       android:layout_gravity="center_horizontal"
+                       android:layout_height="match_parent"
+                       android:layout_weight="3.4"/>
+
+
+                   <TextView
+                       android:layout_width="match_parent"
+                       android:layout_height="match_parent"
+                       android:text="Your's Pehchaan"
+                       android:gravity="center"
+                       android:textStyle="bold"
+                       android:textSize="20sp"
+                       android:textColor="#0B4A53"
+                       android:fontFamily="@font/marcellus_sc"
+                       android:layout_weight="3"/>
+
+                   <TextView
+                       android:layout_width="200dp"
+                       android:layout_gravity="center_horizontal"
+                       android:layout_height="match_parent"
+                       android:background="#093F47"
+                       android:layout_weight="3.65"/>
+
+                   <LinearLayout
+                       android:layout_width="match_parent"
+                       android:layout_height="match_parent"
+                       android:layout_weight="1"
+                       android:orientation="horizontal">
+
+                       <TextView
+                           android:layout_width="match_parent"
+                           android:layout_height="match_parent"
+                           android:layout_weight="1"
+                           android:textColor="#0D5863"
+                           android:gravity="center"
+                           android:padding="5dp"
+                           android:fontFamily="@font/josefin_sans_semibold"
+                           android:textSize="17sp"
+                           android:text="Pehchaan is your book of identities that comes along with various other features to make your life more sorted and cheerful"
+                           />
+
+                       <ImageView
+                           android:layout_width="match_parent"
+                           android:layout_height="match_parent"
+                           android:layout_weight="1.3"
+                           android:padding="12dp"
+                           android:src="@drawable/about2"/>
+
+
+
+
+                   </LinearLayout>
+
+
+
+
+
+
+
+
+               </LinearLayout>
+
+
+
+
+
+           </androidx.cardview.widget.CardView>
+
+
+           <androidx.cardview.widget.CardView
+               android:layout_width="match_parent"
+               android:layout_height="180dp"
+               app:cardCornerRadius="50dp"
+               android:id="@+id/card2"
+               android:layout_marginTop="10dp"
+               app:cardBackgroundColor="#ECF9FB"
+               android:layout_below="@+id/card1">
+
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:orientation="vertical"
+                   android:layout_height="match_parent">
+
+                   <TextView
+                       android:layout_width="match_parent"
+                       android:layout_gravity="center_horizontal"
+                       android:layout_height="match_parent"
+                       android:layout_weight="3.4"/>
+
+
+                   <TextView
+                       android:layout_width="match_parent"
+                       android:layout_height="match_parent"
+                       android:text="One Touch Access"
+                       android:gravity="center"
+                       android:textStyle="bold"
+                       android:textSize="15sp"
+                       android:textColor="#0B4A53"
+                       android:fontFamily="@font/marcellus_sc"
+                       android:layout_weight="3"/>
+
+                   <TextView
+                       android:layout_width="200dp"
+                       android:layout_gravity="center_horizontal"
+                       android:layout_height="match_parent"
+                       android:background="#093F47"
+                       android:layout_weight="3.65"/>
+
+                   <LinearLayout
+                       android:layout_width="match_parent"
+                       android:layout_height="match_parent"
+                       android:layout_weight="1"
+                       android:layout_marginTop="20dp"
+                       android:orientation="horizontal">
+
+                       <LinearLayout
+                           android:layout_width="match_parent"
+                           android:layout_height="match_parent"
+                           android:layout_weight="1.3"
+                           android:orientation="vertical">
+
+                           <ImageView
+                               android:layout_width="match_parent"
+                               android:layout_height="match_parent"
+                               android:layout_weight="1"
+                               android:id="@+id/about"
+                               android:padding="15dp"
+                               android:src="@drawable/account"/>
+
+                           <TextView
+                               android:layout_width="match_parent"
+                               android:layout_height="match_parent"
+                               android:layout_weight="3"
+                               android:textSize="15sp"
+                               android:gravity="center"
+                               android:textColor="#00574B"
+                               android:fontFamily="@font/josefin_sans_semibold"
+                               android:text="About Us"/>
+
+                       </LinearLayout>
+
+
+
+                       <LinearLayout
+                           android:layout_width="match_parent"
+                           android:layout_height="match_parent"
+                           android:layout_weight="1.3"
+                           android:orientation="vertical">
+
+                           <ImageView
+                               android:layout_width="match_parent"
+                               android:layout_height="match_parent"
+                               android:layout_weight="1"
+                               android:padding="15dp"
+                               android:id="@+id/bookicon"
+                               android:src="@drawable/book"/>
+
+                           <TextView
+                               android:layout_width="match_parent"
+                               android:layout_height="match_parent"
+                               android:layout_weight="3"
+                               android:textSize="15sp"
+                               android:gravity="center"
+                               android:textColor="#00574B"
+                               android:fontFamily="@font/josefin_sans_semibold"
+                               android:text="View PhoneBook"/>
+
+                       </LinearLayout>
+
+                       <LinearLayout
+                           android:layout_width="match_parent"
+                           android:layout_height="match_parent"
+                           android:layout_weight="1.3"
+                           android:orientation="vertical">
+
+                           <ImageView
+                               android:layout_width="match_parent"
+                               android:layout_height="match_parent"
+                               android:layout_weight="1"
+                               android:padding="15dp"
+                               android:id="@+id/addcontacts2"
+                               android:src="@drawable/add"/>
+
+                           <TextView
+                               android:layout_width="match_parent"
+                               android:layout_height="match_parent"
+                               android:layout_weight="3"
+                               android:textSize="15sp"
+                               android:gravity="center"
+                               android:textColor="#00574B"
+                               android:fontFamily="@font/josefin_sans_semibold"
+                               android:text="Add"/>
+
+                       </LinearLayout>
+
+
+
+
+                   </LinearLayout>
+
+
+
+
+
+
+
+
+               </LinearLayout>
+
+
+
+
+
+           </androidx.cardview.widget.CardView>
+
+
+
+
+
+           <androidx.cardview.widget.CardView
+               android:layout_width="match_parent"
+               android:layout_height="250dp"
+               app:cardCornerRadius="50dp"
+               android:id="@+id/emgcard"
+               android:layout_marginTop="10dp"
+               android:layout_marginBottom="0dp"
+               app:cardBackgroundColor="#FFF3F9"
+               android:layout_below="@+id/card2">
+
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:orientation="vertical"
+                   android:layout_height="match_parent">
+
+                   <TextView
+                       android:layout_width="match_parent"
+                       android:layout_gravity="center_horizontal"
+                       android:layout_height="match_parent"
+                       android:layout_weight="3.4"/>
+
+
+                   <TextView
+                       android:layout_width="match_parent"
+                       android:layout_height="match_parent"
+                       android:text="Pehchaan's Emergency"
+                       android:gravity="center"
+                       android:textStyle="bold"
+                       android:textSize="17sp"
+                       android:textColor="#710B39"
+                       android:fontFamily="@font/marcellus_sc"
+                       android:layout_weight="3"/>
+
+                   <TextView
+                       android:layout_width="200dp"
+                       android:layout_gravity="center_horizontal"
+                       android:layout_height="match_parent"
+                       android:background="#5C012A"
+                       android:layout_weight="3.659"/>
+
+                   <LinearLayout
+                       android:layout_width="match_parent"
+                       android:layout_height="match_parent"
+                       android:layout_weight="1"
+                       android:orientation="horizontal">
+
+                       <TextView
+                           android:layout_width="match_parent"
+                           android:layout_height="match_parent"
+                           android:layout_weight="1"
+                           android:textColor="#730637"
+                           android:gravity="center"
+                           android:padding="5dp"
+                           android:fontFamily="@font/josefin_sans_semibold"
+                           android:textSize="17sp"
+                           android:text="Emergency Portal of pehchaan allows an individual to access 4 of his/her close contacts instantly through SMS"
+                           />
+
+                       <ImageView
+                           android:layout_width="match_parent"
+                           android:layout_height="match_parent"
+                           android:layout_weight="1.3"
+                           android:padding="12dp"
+                           android:src="@drawable/emergencyicon"/>
+
+
+
+
+                   </LinearLayout>
+
+
+
+
+
+
+
+
+               </LinearLayout>
+
+
+
+
+
+           </androidx.cardview.widget.CardView>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+       </RelativeLayout>
+
+
+
+   </ScrollView>
+
+
+
+</FrameLayout>
