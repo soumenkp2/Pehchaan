@@ -10,10 +10,10 @@ But with this it also adds on an emergency suvidha where user can save his/her c
 
 
 <p align="center">
-  <img src="https://github.com/soumenkp2/Pehchaan/blob/master/WhatsApp%20Image%202022-12-06%20at%2002.48.27.jpeg" width="256" hspace="4">
-  <img src="https://github.com/soumenkp2/Pehchaan/blob/master/WhatsApp%20Image%202022-12-06%20at%2002.48.28(1).jpeg" width="256" hspace="4">
-  <img src="https://github.com/soumenkp2/Pehchaan/blob/master/WhatsApp%20Image%202022-12-06%20at%2002.48.28(2).jpeg" width="256" hspace="4">
-  <img src="https://github.com/soumenkp2/Pehchaan/blob/master/WhatsApp%20Image%202022-12-06%20at%2002.48.28.jpeg" width="256" hspace="4">
+  <img src="https://github.com/soumenkp2/Pehchaan/blob/master/WhatsApp%20Image%202022-12-06%20at%2002.48.27.jpeg" width="256" hspace="5">
+  <img src="https://github.com/soumenkp2/Pehchaan/blob/master/WhatsApp%20Image%202022-12-06%20at%2002.48.28(1).jpeg" width="256" hspace="5">
+  <img src="https://github.com/soumenkp2/Pehchaan/blob/master/WhatsApp%20Image%202022-12-06%20at%2002.48.28(2).jpeg" width="256" hspace="5">
+  <img src="https://github.com/soumenkp2/Pehchaan/blob/master/WhatsApp%20Image%202022-12-06%20at%2002.48.28.jpeg" width="256" hspace="5">
 </p>
 
 ## Download & install
