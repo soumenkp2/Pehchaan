@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="#FFF3F9"
-    tools:context=".emergency">
+    tools:context=".fragment.EmergencyFragment">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -88,7 +88,10 @@
                 android:id="@+id/cardcontacts"
                 android:layout_height="400dp"
                 android:layout_marginTop="60dp"
-                app:cardCornerRadius="100dp"
+                android:layout_marginStart="6dp"
+                android:layout_marginEnd="6dp"
+                app:cardElevation="4dp"
+                app:cardCornerRadius="30dp"
                 app:cardBackgroundColor="#FDCCE3"
                 android:layout_below="@id/sendbtn">
 
@@ -265,34 +268,21 @@
 
                     </LinearLayout>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
                 </LinearLayout>
 
 
-
-
             </androidx.cardview.widget.CardView>
-
 
 
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_marginTop="40dp"
                 android:layout_marginBottom="50dp"
+                android:layout_marginStart="6dp"
+                android:layout_marginEnd="6dp"
+                app:cardElevation="4dp"
+                app:cardCornerRadius="30dp"
                 android:layout_height="400dp"
-                app:cardCornerRadius="100dp"
                 app:cardBackgroundColor="#FFCFE4"
                 android:layout_below="@+id/cardcontacts">
 
@@ -323,9 +313,6 @@
                         android:textColor="#710A39"
                         android:textSize="20sp" />
 
-
-
-
                 </LinearLayout>
 
                 <TextView
@@ -341,14 +328,13 @@
                     android:layout_weight="1"
                     android:orientation="horizontal">
 
-
-
                     <EditText
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:hint="Write your message"
                         android:id="@+id/editmsg"
                         android:gravity="center"
+                        android:layout_margin="8dp"
                         android:textColor="#830A41"
                         android:fontFamily="@font/josefin_sans_semibold"
                         android:layout_weight="1"/>
@@ -368,47 +354,10 @@
                 </LinearLayout>
 
 
-
-
-
-
-
             </androidx.cardview.widget.CardView>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
         </RelativeLayout>
 
-
-
-
-
-
-
-
-
-
     </ScrollView>
-
-
-
-
-
-
-
-
-
 
 </FrameLayout>

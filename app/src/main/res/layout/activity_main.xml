@@ -4,119 +4,110 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ECF9FB"
-    tools:context=".MainActivity">
+    android:background="@color/screen_back_color"
+    tools:context=".activity.MainActivity">
 
     <FrameLayout
-        android:layout_width="match_parent"
         android:id="@+id/container"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@id/linear"/>
-
-
-
-
-
-
+        android:layout_above="@id/linear" />
 
     <LinearLayout
         android:id="@+id/linear"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:orientation="horizontal"
-        android:layout_alignParentBottom="true">
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal">
 
         <ImageView
             android:id="@+id/main_feed"
-            android:padding="6dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:src="@drawable/main"
-            android:layout_weight="1"/>
+            android:layout_weight="1"
+            android:padding="8dp"
+            android:src="@drawable/main" />
 
         <ImageView
             android:id="@+id/dialpad"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:src="@drawable/dialpad"
-            android:padding="6dp"
-            android:layout_weight="1"/>
+            android:layout_weight="1"
+            android:padding="8dp"
+            android:src="@drawable/dialpad" />
 
         <ImageView
             android:id="@+id/book"
-            android:src="@drawable/book"
             android:layout_width="match_parent"
-            android:padding="6dp"
             android:layout_height="match_parent"
-            android:layout_weight="1"/>
+            android:layout_weight="1"
+            android:padding="8dp"
+            android:src="@drawable/book" />
 
         <ImageView
             android:id="@+id/emergency"
-            android:src="@drawable/emergencyicon"
-            android:padding="6dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1"/>
+            android:layout_weight="1"
+            android:padding="8dp"
+            android:src="@drawable/emergencyicon" />
 
 
     </LinearLayout>
 
-
     <LinearLayout
         android:id="@+id/linearup"
         android:layout_width="match_parent"
-        android:layout_above="@id/linear"
         android:layout_height="33dp"
-        android:orientation="horizontal"
-        android:layout_alignParentBottom="false">
+        android:layout_above="@id/linear"
+        android:layout_alignParentBottom="false"
+        android:orientation="horizontal">
 
         <TextView
             android:id="@+id/main_feedup"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text=" "
-            android:gravity="center"
             android:fontFamily="@font/josefin_sans_semibold"
+            android:gravity="center"
             android:padding="6dp"
-            android:src="@drawable/main" />
+            android:src="@drawable/main"
+            android:text=" " />
 
         <TextView
             android:id="@+id/dialup"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:src="@drawable/dialpad"
-            android:text=" "
+            android:layout_weight="1"
             android:fontFamily="@font/josefin_sans_semibold"
             android:gravity="center"
             android:padding="6dp"
-            android:layout_weight="1"/>
+            android:src="@drawable/dialpad"
+            android:text=" " />
 
         <TextView
             android:id="@+id/bookup"
-            android:src="@drawable/book"
             android:layout_width="match_parent"
-            android:text=" "
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:fontFamily="@font/josefin_sans_semibold"
             android:gravity="center"
             android:padding="6dp"
-            android:fontFamily="@font/josefin_sans_semibold"
-            android:layout_height="match_parent"
-            android:layout_weight="1"/>
+            android:src="@drawable/book"
+            android:text=" " />
 
         <TextView
             android:id="@+id/emergencyup"
-            android:src="@drawable/emergency"
-            android:padding="6dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text=" "
+            android:layout_weight="1"
             android:fontFamily="@font/josefin_sans_semibold"
             android:gravity="center"
-            android:layout_weight="1"/>
+            android:padding="6dp"
+            android:src="@drawable/emergency"
+            android:text=" " />
 
 
     </LinearLayout>
-
-
 
 </RelativeLayout>

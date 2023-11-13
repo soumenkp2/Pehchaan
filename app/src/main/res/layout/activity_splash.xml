@@ -3,27 +3,27 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@color/screen_back_color"
     android:layout_height="match_parent"
-    tools:context=".activity.LogsActivity">
+    android:background="@color/splash_back"
+    tools:context=".activity.SplashActivity">
 
+    <ImageView
+        android:id="@+id/head"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/splash_icon" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/descript"
+        android:layout_below="@+id/head"
         android:layout_marginTop="10dp"
         android:fontFamily="@font/lovers_quarrel"
         android:gravity="center"
-        android:text="Your book of Identities"
-        android:textColor="#0c1c43"
-        android:textSize="29sp" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="match_parent"
-        android:id="@+id/recyclelogs"
-        android:layout_marginTop="54dp"
-        android:layout_height="match_parent"/>
-
+        android:text="Your Book of Identities"
+        android:textColor="#FFFFFF"
+        android:textSize="50sp" />
 
 </RelativeLayout>
