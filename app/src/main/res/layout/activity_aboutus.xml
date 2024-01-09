@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ECF9FB"
-    tools:context=".aboutus">
+    android:background="@color/screen_back_color"
+    tools:context=".activity.AboutUsActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -52,8 +52,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="250dp"
                 android:layout_marginTop="40dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
                 app:cardCornerRadius="50dp"
-                app:cardBackgroundColor="#ECF9FB"
+                app:cardBackgroundColor="@color/screen_back_color"
                 android:layout_below="@+id/mainheader">
 
                 <LinearLayout
@@ -163,8 +165,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="250dp"
                 app:cardCornerRadius="50dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
                 android:layout_marginTop="40dp"
-                app:cardBackgroundColor="#ECF9FB"
+                app:cardBackgroundColor="@color/screen_back_color"
                 android:layout_below="@+id/mainheader">
 
                 <LinearLayout

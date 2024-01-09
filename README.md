@@ -1,6 +1,3 @@
-<p align="center">
-  <img src="https://github.com/soumenkp2/Pehchaan/blob/master/app/src/main/res/drawable/header.png" width="200">
-</p>
 <h1 align="center">Pehchaan - Your own book of Identities</h1>
 <h3 align="center">Modern Age Phone Book with Emergency Suvidha</h3>
 
@@ -10,10 +7,10 @@ But with this it also adds on an emergency suvidha where user can save his/her c
 
 
 <p align="center">
-  <img src="https://github.com/soumenkp2/Pehchaan/blob/master/WhatsApp%20Image%202022-12-06%20at%2002.48.27.jpeg" width="256" hspace="5">
-  <img src="https://github.com/soumenkp2/Pehchaan/blob/master/WhatsApp%20Image%202022-12-06%20at%2002.48.28(1).jpeg" width="256" hspace="5">
-  <img src="https://github.com/soumenkp2/Pehchaan/blob/master/WhatsApp%20Image%202022-12-06%20at%2002.48.28(2).jpeg" width="256" hspace="5">
-  <img src="https://github.com/soumenkp2/Pehchaan/blob/master/WhatsApp%20Image%202022-12-06%20at%2002.48.28.jpeg" width="256" hspace="5">
+  <img src="https://omstar.co.in/public/uploads/all/Screenshot_0.png" width="176" hspace="5">
+  <img src="https://omstar.co.in/public/uploads/all/Screenshot_1.png" width="176" hspace="5">
+  <img src="https://omstar.co.in/public/uploads/all/Screenshot_2.png" width="176" hspace="5">
+  <img src="https://omstar.co.in/public/uploads/all/Screenshot_3.png" width="176" hspace="5">
 </p>
 
 ## Download & install

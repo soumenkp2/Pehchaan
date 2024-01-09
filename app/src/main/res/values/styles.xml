@@ -1,29 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources >
 
-
-
-
     <style name="fontForNotificationLandingPage">
         <item name="android:fontFamily">@font/josefin_sans_semibold</item>
         <item name="android:textColor">#333333</item>
-        <item name="background">@color/purple_500</item>
-
-
+        <item name="background">@color/colorPrimaryDark</item>
     </style>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 </resources>
