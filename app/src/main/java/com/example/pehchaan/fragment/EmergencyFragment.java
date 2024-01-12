@@ -60,7 +60,7 @@ public class EmergencyFragment extends Fragment {
         SharedPreferences.Editor editor1 = num1.edit();
 
         SharedPreferences num1g = this.getActivity().getSharedPreferences("phonenum1", Context.MODE_PRIVATE);
-        String value1 = num1g.getString("num1", "Enter num1");
+        String value1 = num1g.getString("num1", "Enter Num1");
         e1.setText(value1);
 
         ImageView t1 = (ImageView) v.findViewById(R.id.txt1);
