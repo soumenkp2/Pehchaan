@@ -236,10 +236,6 @@ public class EmergencyFragment extends Fragment {
             @Override
             public void onClick(View v) {
 
-                // A single toast efficiently conveys the message to the user.
-                Toast.makeText(getActivity(), "Message Sent",
-                        Toast.LENGTH_LONG).show();
-
                 String number1 = num1.getString("num1", "Enter Num1");
                 String number2 = num2.getString("num2", "Enter Num2");
                 String number3 = num3.getString("num3", "Enter Num3");
@@ -303,7 +299,9 @@ public class EmergencyFragment extends Fragment {
                     ex.printStackTrace();
                 }
 
-
+                // A single toast efficiently conveys the message to the user.
+                Toast.makeText(getActivity(), "Message Sent",
+                        Toast.LENGTH_LONG).show();
             }
         });
 
