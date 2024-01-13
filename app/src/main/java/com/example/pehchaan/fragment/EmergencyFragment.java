@@ -42,8 +42,7 @@ public class EmergencyFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_emergency, container, false);
 
@@ -187,7 +186,6 @@ public class EmergencyFragment extends Fragment {
                 }
 
 
-
             }
         });
 
@@ -276,8 +274,7 @@ public class EmergencyFragment extends Fragment {
                     SmsManager smsManager = SmsManager.getDefault();
                     smsManager.sendTextMessage(EmergencyContactNumber.get(0), null, "Your known person is in emergency , We Phechaan is sending you his/her emergency message ahead.\n Message sent by him/her:\n" + CustomEmergencyMess, null, null);
                 } catch (Exception ex) {
-                    Toast.makeText(getActivity(), ex.getMessage().toString(),
-                            Toast.LENGTH_LONG).show();
+                    Toast.makeText(getActivity(), ex.getMessage().toString(), Toast.LENGTH_LONG).show();
                     ex.printStackTrace();
                 }
 
@@ -286,8 +283,7 @@ public class EmergencyFragment extends Fragment {
                     SmsManager smsManager = SmsManager.getDefault();
                     smsManager.sendTextMessage(EmergencyContactNumber.get(1), null, "Your known person is in emergency , We Phechaan is sending you his/her emergency message ahead.\n Message sent by him/her:\n" + CustomEmergencyMess, null, null);
                 } catch (Exception ex) {
-                    Toast.makeText(getActivity(), ex.getMessage().toString(),
-                            Toast.LENGTH_LONG).show();
+                    Toast.makeText(getActivity(), ex.getMessage().toString(), Toast.LENGTH_LONG).show();
                     ex.printStackTrace();
                 }
 
@@ -295,8 +291,7 @@ public class EmergencyFragment extends Fragment {
                     SmsManager smsManager = SmsManager.getDefault();
                     smsManager.sendTextMessage(EmergencyContactNumber.get(2), null, "Your known person is in emergency , We Phechaan is sending you his/her emergency message ahead.\n Message sent by him/her:\n" + CustomEmergencyMess, null, null);
                 } catch (Exception ex) {
-                    Toast.makeText(getActivity(), ex.getMessage().toString(),
-                            Toast.LENGTH_LONG).show();
+                    Toast.makeText(getActivity(), ex.getMessage().toString(), Toast.LENGTH_LONG).show();
                     ex.printStackTrace();
                 }
 
@@ -305,13 +300,11 @@ public class EmergencyFragment extends Fragment {
                     SmsManager smsManager = SmsManager.getDefault();
                     smsManager.sendTextMessage(EmergencyContactNumber.get(3), null, "Your known person is in emergency , We Phechaan is sending you his/her emergency message ahead.\n Message sent by him/her:\n" + CustomEmergencyMess, null, null);
                 } catch (Exception ex) {
-                    Toast.makeText(getActivity(), ex.getMessage().toString(),
-                            Toast.LENGTH_LONG).show();
+                    Toast.makeText(getActivity(), ex.getMessage().toString(), Toast.LENGTH_LONG).show();
                     ex.printStackTrace();
-                }finally {
+                } finally {
                     // A single toast efficiently conveys the message to the user.
-                    Toast.makeText(getActivity(), "Message Sent",
-                            Toast.LENGTH_LONG).show();
+                    Toast.makeText(getActivity(), "Message Sent", Toast.LENGTH_LONG).show();
                 }
 
 
