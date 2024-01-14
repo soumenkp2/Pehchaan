@@ -13,6 +13,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.example.pehchaan.activity.AddContactsActivity;
 import com.example.pehchaan.activity.LogsActivity;
@@ -36,6 +37,7 @@ public class HomeFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_home, container, false);
+        Toast.makeText(requireContext(),"Welcome to Pehchaan", Toast.LENGTH_SHORT).show();
 
         ImageView nd = (ImageView) v.findViewById(R.id.about);
 

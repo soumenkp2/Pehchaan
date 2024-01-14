@@ -45,6 +45,7 @@ public class EmergencyFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_emergency, container, false);
+        Toast.makeText(requireContext(),"\uD83D\uDEA8 Emergency Contacts", Toast.LENGTH_SHORT).show();
 
         Button send = (Button) view.findViewById(R.id.sendbtn);
 
