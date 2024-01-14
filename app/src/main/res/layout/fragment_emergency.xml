@@ -153,6 +153,8 @@
                             android:hint="Emergency 1"
                             android:id="@+id/edit1"
                             android:gravity="center"
+                            android:inputType="number"
+                            android:maxLength="10"
                             android:textColor="#710A39"
                             android:fontFamily="@font/josefin_sans_semibold"
                             android:layout_weight="1"/>
@@ -187,7 +189,9 @@
                             android:hint="Emergency 2"
                             android:gravity="center"
                             android:id="@+id/edit2"
+                            android:maxLength="10"
                             android:textColor="#710A39"
+                            android:inputType="number"
                             android:fontFamily="@font/josefin_sans_semibold"
                             android:layout_weight="1"/>
 
@@ -221,6 +225,8 @@
                             android:gravity="center"
                             android:id="@+id/edit3"
                             android:textColor="#710A39"
+                            android:maxLength="10"
+                            android:inputType="number"
                             android:fontFamily="@font/josefin_sans_semibold"
                             android:layout_weight="1"/>
 
@@ -255,6 +261,8 @@
                             android:gravity="center"
                             android:id="@+id/edit4"
                             android:textColor="#710A39"
+                            android:maxLength="10"
+                            android:inputType="number"
                             android:fontFamily="@font/josefin_sans_semibold"
                             android:layout_weight="1"/>
 
