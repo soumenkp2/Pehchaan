@@ -38,6 +38,7 @@ public class DialpadFragment extends Fragment {
 
 
         View v = inflater.inflate(R.layout.fragment_dialpad, container, false);
+        Toast.makeText(requireContext(),"Dial In!", Toast.LENGTH_SHORT).show();
 
 
         TextView one = (TextView) v.findViewById(R.id.one);
