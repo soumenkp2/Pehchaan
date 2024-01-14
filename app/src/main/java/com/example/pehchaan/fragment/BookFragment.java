@@ -15,6 +15,7 @@ import android.provider.ContactsContract;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.example.pehchaan.R;
 import com.example.pehchaan.model.Model;
@@ -48,6 +49,7 @@ public class BookFragment extends Fragment {
         }
 
         View v = inflater.inflate(R.layout.fragment_book, container, false);
+        Toast.makeText(requireContext(),"Explore Your Contacts!", Toast.LENGTH_SHORT).show();
 
         rcv = (RecyclerView) v.findViewById(R.id.recycle);
         rcv.setLayoutManager(new LinearLayoutManager(getContext()));
