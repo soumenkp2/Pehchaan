@@ -1,12 +1,8 @@
 package com.example.pehchaan.viewholder;
 
-import android.widget.ImageView;
-import android.widget.TextView;
-
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.pehchaan.R;
 import com.example.pehchaan.databinding.CustomItemBinding;
 import com.example.pehchaan.model.Model;
 

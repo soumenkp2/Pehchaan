@@ -5,13 +5,6 @@ import android.annotation.SuppressLint;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.os.Bundle;
-
-import androidx.cardview.widget.CardView;
-import androidx.core.app.ActivityCompat;
-import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.provider.ContactsContract;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -21,9 +14,14 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import androidx.core.app.ActivityCompat;
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.example.pehchaan.R;
-import com.example.pehchaan.model.Model;
 import com.example.pehchaan.adapter.MyAdapter;
+import com.example.pehchaan.model.Model;
 
 import java.util.ArrayList;
 
@@ -56,7 +54,7 @@ public class BookFragment extends Fragment {
         }
 
         View v = inflater.inflate(R.layout.fragment_book, container, false);
-        Toast.makeText(requireContext(),"Explore Your Contacts!", Toast.LENGTH_SHORT).show();
+        Toast.makeText(requireContext(), "Explore Your Contacts!", Toast.LENGTH_SHORT).show();
 
         rcv = (RecyclerView) v.findViewById(R.id.recycle);
         rcv.setLayoutManager(new LinearLayoutManager(getContext()));
@@ -64,7 +62,6 @@ public class BookFragment extends Fragment {
         ad = new MyAdapter(dataque(), getContext());
 
         rcv.setAdapter(ad);
-
 
 
         rcv.setLayoutManager(new LinearLayoutManager(getContext()));
@@ -91,7 +88,6 @@ public class BookFragment extends Fragment {
                 // Not used
             }
         });
-
 
 
         return v;
@@ -429,7 +425,6 @@ public class BookFragment extends Fragment {
     }
 
 
-
     private void filterData(String query) {
         ArrayList<Model> filteredData = new ArrayList<>();
         for (Model model : originalData) {
@@ -441,7 +436,6 @@ public class BookFragment extends Fragment {
         ad.setData(filteredData); // Update adapter with filtered data
         ad.notifyDataSetChanged();
     }
-
 
 
 }
