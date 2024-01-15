@@ -7,6 +7,7 @@ import android.location.LocationManager;
 
 public class LocationManagerHelper {
     private Context context;
+
     public LocationManagerHelper(Context context) {
         this.context = context;
     }
