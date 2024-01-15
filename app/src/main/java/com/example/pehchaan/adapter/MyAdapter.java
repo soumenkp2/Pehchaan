@@ -13,10 +13,9 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.pehchaan.databinding.CustomItemBinding;
-import com.example.pehchaan.viewholder.MyViewHolder;
-import com.example.pehchaan.R;
 import com.example.pehchaan.fragment.DetailsFragment;
 import com.example.pehchaan.model.Model;
+import com.example.pehchaan.viewholder.MyViewHolder;
 
 import java.util.ArrayList;
 
@@ -56,7 +55,8 @@ public class MyAdapter extends RecyclerView.Adapter<MyViewHolder> {
         holder.binding.itemcall.setImageResource(data.get(position).getCall());
         holder.binding.itemmessage.setImageResource(data.get(position).getMessage());
 
-        holder.binding.itemtext.setOnClickListener(new View.OnClickListener() {
+
+        holder.binding.cvItem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
