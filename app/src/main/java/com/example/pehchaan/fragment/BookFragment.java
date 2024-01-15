@@ -5,21 +5,23 @@ import android.annotation.SuppressLint;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.provider.ContactsContract;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.provider.ContactsContract;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Toast;
-
 import com.example.pehchaan.R;
-import com.example.pehchaan.model.Model;
 import com.example.pehchaan.adapter.MyAdapter;
+import com.example.pehchaan.model.Model;
 
 import java.util.ArrayList;
 
@@ -27,6 +29,9 @@ public class BookFragment extends Fragment {
 
     public RecyclerView rcv;
     public MyAdapter ad;
+
+    private ArrayList<Model> originalData;
+    private EditText searchEditText;
 
     public BookFragment() {
         // Required empty public constructor
@@ -49,7 +54,7 @@ public class BookFragment extends Fragment {
         }
 
         View v = inflater.inflate(R.layout.fragment_book, container, false);
-        Toast.makeText(requireContext(),"Explore Your Contacts!", Toast.LENGTH_SHORT).show();
+        Toast.makeText(requireContext(), "Explore Your Contacts!", Toast.LENGTH_SHORT).show();
 
         rcv = (RecyclerView) v.findViewById(R.id.recycle);
         rcv.setLayoutManager(new LinearLayoutManager(getContext()));
@@ -57,6 +62,32 @@ public class BookFragment extends Fragment {
         ad = new MyAdapter(dataque(), getContext());
 
         rcv.setAdapter(ad);
+
+
+        rcv.setLayoutManager(new LinearLayoutManager(getContext()));
+
+        originalData = dataque(); // Store original data for filtering
+        ad = new MyAdapter(originalData, getContext());
+        rcv.setAdapter(ad);
+
+        searchEditText = v.findViewById(R.id.searchEditText);
+        searchEditText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                // Not used
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                // Filter the data based on user input
+                filterData(charSequence.toString());
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                // Not used
+            }
+        });
 
 
         return v;
@@ -326,7 +357,6 @@ public class BookFragment extends Fragment {
 
 
 
-
        /* ArrayList<model> holder = new ArrayList<>();
 
 
@@ -392,6 +422,19 @@ public class BookFragment extends Fragment {
         return holder;
 
 
+    }
+
+
+    private void filterData(String query) {
+        ArrayList<Model> filteredData = new ArrayList<>();
+        for (Model model : originalData) {
+            // Add models that match the search query
+            if (model.getTxt().toLowerCase().contains(query.toLowerCase())) {
+                filteredData.add(model);
+            }
+        }
+        ad.setData(filteredData); // Update adapter with filtered data
+        ad.notifyDataSetChanged();
     }
 
 

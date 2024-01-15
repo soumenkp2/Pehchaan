@@ -118,6 +118,13 @@ public class MyAdapter extends RecyclerView.Adapter<MyViewHolder> {
     public int getItemCount() {
         return data.size();
     }
+
+
+    // Method to update data in the adapter
+    public void setData(ArrayList<Model> newData) {
+        this.data = newData;
+    }
+
 }
 
 
