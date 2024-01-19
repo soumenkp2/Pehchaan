@@ -20,22 +20,21 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
-
 import androidx.annotation.NonNull;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
-
 import com.example.pehchaan.R;
 import com.example.pehchaan.utils.LocationManagerHelper;
-
 import java.util.ArrayList;
 import java.util.List;
+
 
 public class EmergencyFragment extends Fragment {
 
     private static final int LOCATION_PERMISSION_REQUEST_CODE = 1;
-    private static final int LOCATION_SETTINGS_REQUEST_CODE = 2;
+    //    private static final int LOCATION_SETTINGS_REQUEST_CODE = 2;
+    private static final int PERMISSION_REQUEST_CODE = 100;
     private LocationManagerHelper locationManagerHelper;
 
 
@@ -282,6 +281,7 @@ public class EmergencyFragment extends Fragment {
 
                 locationRequest();
 
+
                 /*Intent sms1 = new Intent(Intent.ACTION_VIEW);
                 sms1.setData(Uri.parse("smsto:"));
                 sms1.setType("vnd.android-dir/mms-sms");
@@ -300,6 +300,7 @@ public class EmergencyFragment extends Fragment {
                     Toast.makeText(getActivity(),"oops! failed",Toast.LENGTH_SHORT).show();
                 }*/
 
+
             }
         });
         return view;
@@ -307,7 +308,7 @@ public class EmergencyFragment extends Fragment {
 
 
     private void retrieveUserLocation() {
-        Location location = locationManagerHelper.getLastKnownLocation();
+        Location location = locationManagerHelper.getLocation();
         if (location != null) {
             double latitude = location.getLatitude();
             double longitude = location.getLongitude();
@@ -335,6 +336,7 @@ public class EmergencyFragment extends Fragment {
             retrieveUserLocation();
         }
     }
+
 
     private void showPermissionRationaleDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(requireContext());
@@ -365,29 +367,20 @@ public class EmergencyFragment extends Fragment {
             customMess = "Your known person is in emergency , We Phechaan is sending you his/her emergency message ahead.\n" + "Emergency! I need help. My current location: " + googleMapsLink;
         }
 
-        Log.d("THIS", googleMapsLink);
-
-
-        Log.d("THIS", "Before sending SMS to number1");
-
-        Log.d("THIS", "size " + EmergencyContactNumber.size());
-
         for (String phoneNumber : EmergencyContactNumber) {
             try {
                 SmsManager smsManager = SmsManager.getDefault();
-                smsManager.sendTextMessage(phoneNumber, null, customMess, null, null);
-                Log.d("THIS", "SMS sent successfully to: " + phoneNumber);
+                ArrayList<String> parts = smsManager.divideMessage(customMess);
+                smsManager.sendMultipartTextMessage(phoneNumber, null, parts, null, null);
             } catch (Exception ex) {
-                Log.e("THIS", "Error sending SMS to " + phoneNumber + ": " + ex.getMessage());
                 Toast.makeText(getActivity(), "Error sending SMS: " + ex.getMessage(), Toast.LENGTH_LONG).show();
                 ex.printStackTrace();
             }
         }
 
         Toast.makeText(getActivity(), "Messages Sent", Toast.LENGTH_LONG).show();
-
-
     }
+
 
     private void showEnableLocationSettingsDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(requireContext());
