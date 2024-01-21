@@ -8,7 +8,6 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 
-import android.provider.ContactsContract;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -67,7 +66,7 @@ public class HomeFragment extends Fragment {
 //                i.putExtra(ContactsContract.Intents.Insert.PHONE_TYPE, ContactsContract.CommonDataKinds.Phone.TYPE_WORK);
 //
 //                startActivity(i);
-                addContact();
+                openAddContactScreen();
             }
         });
 
@@ -93,7 +92,7 @@ public class HomeFragment extends Fragment {
         add2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                addContact();
+                openAddContactScreen();
             }
         });
 
@@ -150,7 +149,7 @@ public class HomeFragment extends Fragment {
 
     }
 
-    private void addContact() {
+    private void openAddContactScreen() {
         Intent intent = new Intent(getActivity(), AddContactsActivity.class);
         startActivity(intent);
     }
