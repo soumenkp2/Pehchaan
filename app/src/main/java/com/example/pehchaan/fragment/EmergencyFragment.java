@@ -1,8 +1,16 @@
 package com.example.pehchaan.fragment;
 
+
+import android.Manifest;
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
+import android.location.Location;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.telephony.SmsManager;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,15 +20,23 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
 import com.example.pehchaan.R;
+import com.example.pehchaan.utils.LocationManagerHelper;
 
 import java.util.ArrayList;
 import java.util.List;
 
+
 public class EmergencyFragment extends Fragment {
+
+    private static final int LOCATION_PERMISSION_REQUEST_CODE = 1;
+    private LocationManagerHelper locationManagerHelper;
+
 
     // these are constant value for checking of editView of particular Contact/Mess is enabled or disabled
     public int emergencyContact1 = 0;
@@ -46,6 +62,8 @@ public class EmergencyFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_emergency, container, false);
         Toast.makeText(requireContext(),"\uD83D\uDEA8 Emergency Contacts", Toast.LENGTH_SHORT).show();
+
+        locationManagerHelper = new LocationManagerHelper(requireContext());
 
         Button send = (Button) view.findViewById(R.id.sendbtn);
 
@@ -142,6 +160,7 @@ public class EmergencyFragment extends Fragment {
 
         EmergencyNumber2_Image.setOnClickListener(new View.OnClickListener() {
             @Override
+
             public void onClick(View view) {
                 emergencyContact2++;
                 if (emergencyContact2 == 1) {
@@ -168,6 +187,7 @@ public class EmergencyFragment extends Fragment {
 
         EmergencyNumber3_Image.setOnClickListener(new View.OnClickListener() {
             @Override
+
             public void onClick(View view) {
                 emergencyContact3++;
                 if (emergencyContact3 == 1) {
@@ -193,6 +213,7 @@ public class EmergencyFragment extends Fragment {
 
         EmergencyNumber4_Image.setOnClickListener(new View.OnClickListener() {
             @Override
+
             public void onClick(View view) {
                 emergencyContact4++;
                 if (emergencyContact4 == 1) {
@@ -218,6 +239,7 @@ public class EmergencyFragment extends Fragment {
 
         customEmergencyMess_Image.setOnClickListener(new View.OnClickListener() {
             @Override
+
             public void onClick(View view) {
                 emergencyMessage++;
                 if (emergencyMessage == 1) {
@@ -245,74 +267,121 @@ public class EmergencyFragment extends Fragment {
             @Override
             public void onClick(View view) {
 
-                // save all the contact number in the EmergencyContactNumber array
-                EmergencyContactNumber.add(num1.getString("num1", "Enter Num1"));
-                EmergencyContactNumber.add(num2.getString("num2", "Enter Num2"));
-                EmergencyContactNumber.add(num3.getString("num3", "Enter Num3"));
-                EmergencyContactNumber.add(num4.getString("num4", "Enter Num4"));
-
+                if (EmergencyContactNumber.isEmpty()) {
+                    EmergencyContactNumber.add(num1.getString("num1", "Enter Num1"));
+                    EmergencyContactNumber.add(num2.getString("num1", "Enter Num2"));
+                    EmergencyContactNumber.add(num3.getString("num1", "Enter Num3"));
+                    EmergencyContactNumber.add(num4.getString("num1", "Enter Num4"));
+                } else {
+                    EmergencyContactNumber.set(0, num1.getString("num1", "Enter Num1"));
+                    EmergencyContactNumber.set(1, num2.getString("num2", "Enter Num2"));
+                    EmergencyContactNumber.set(2, num3.getString("num3", "Enter Num3"));
+                    EmergencyContactNumber.set(3, num4.getString("num4", "Enter Num4"));
+                }
                 CustomEmergencyMess = nummsg.getString("nummsg", "Enter your message");
 
-                /*Intent sms1 = new Intent(Intent.ACTION_VIEW);
-                sms1.setData(Uri.parse("smsto:"));
-                sms1.setType("vnd.android-dir/mms-sms");
-                sms1.putExtra("address", number1);
-                sms1.putExtra("sms_body", "Your known person is in emergency , We Phechaan is sending you his/her emergency message ahead.\n" + message);
-
-                try
-                {
-
-                    startActivity(sms1);
-                    Toast.makeText(getActivity(),"sent sucessfully!",Toast.LENGTH_SHORT).show();
-                }
-                catch (android.content.ActivityNotFoundException ex)
-                {
-
-                    Toast.makeText(getActivity(),"oops! failed",Toast.LENGTH_SHORT).show();
-                }*/
-
-                try {
-                    SmsManager smsManager = SmsManager.getDefault();
-                    smsManager.sendTextMessage(EmergencyContactNumber.get(0), null, "Your known person is in emergency , We Phechaan is sending you his/her emergency message ahead.\n Message sent by him/her:\n" + CustomEmergencyMess, null, null);
-                } catch (Exception ex) {
-                    Toast.makeText(getActivity(), ex.getMessage().toString(), Toast.LENGTH_LONG).show();
-                    ex.printStackTrace();
-                }
-
-
-                try {
-                    SmsManager smsManager = SmsManager.getDefault();
-                    smsManager.sendTextMessage(EmergencyContactNumber.get(1), null, "Your known person is in emergency , We Phechaan is sending you his/her emergency message ahead.\n Message sent by him/her:\n" + CustomEmergencyMess, null, null);
-                } catch (Exception ex) {
-                    Toast.makeText(getActivity(), ex.getMessage().toString(), Toast.LENGTH_LONG).show();
-                    ex.printStackTrace();
-                }
-
-                try {
-                    SmsManager smsManager = SmsManager.getDefault();
-                    smsManager.sendTextMessage(EmergencyContactNumber.get(2), null, "Your known person is in emergency , We Phechaan is sending you his/her emergency message ahead.\n Message sent by him/her:\n" + CustomEmergencyMess, null, null);
-                } catch (Exception ex) {
-                    Toast.makeText(getActivity(), ex.getMessage().toString(), Toast.LENGTH_LONG).show();
-                    ex.printStackTrace();
-                }
-
-
-                try {
-                    SmsManager smsManager = SmsManager.getDefault();
-                    smsManager.sendTextMessage(EmergencyContactNumber.get(3), null, "Your known person is in emergency , We Phechaan is sending you his/her emergency message ahead.\n Message sent by him/her:\n" + CustomEmergencyMess, null, null);
-                } catch (Exception ex) {
-                    Toast.makeText(getActivity(), ex.getMessage().toString(), Toast.LENGTH_LONG).show();
-                    ex.printStackTrace();
-                } finally {
-                    // A single toast efficiently conveys the message to the user.
-                    Toast.makeText(getActivity(), "Message Sent", Toast.LENGTH_LONG).show();
-                }
-
+                // requesting or checking the location permission
+                locationRequest();
 
             }
         });
-
-
         return view;
     }
+
+
+    private void retrieveUserLocation() {
+        Location location = locationManagerHelper.getLocation();
+        if (location != null) {
+            double latitude = location.getLatitude();
+            double longitude = location.getLongitude();
+            // Generate Google Maps link and send SMS.
+            sendLocationViaSMS(latitude, longitude);
+        } else {
+            // Handle case where location is unavailable. or GPS location OFF
+            Toast.makeText(requireContext(), "Unable to retrieve location. Please try again", Toast.LENGTH_LONG).show();
+            showEnableLocationSettingsDialog();
+        }
+    }
+
+
+    private void locationRequest() {
+        // Check if the app has location permission, if not, request it.
+        if (ContextCompat.checkSelfPermission(requireContext(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            // Request the permission.
+            if (ActivityCompat.shouldShowRequestPermissionRationale(requireActivity(), Manifest.permission.ACCESS_FINE_LOCATION)) {
+                showPermissionRationaleDialog();
+            } else {
+                requestLocationPermission();
+            }
+        } else {
+            // Permission already granted, proceed with location retrieval.
+            retrieveUserLocation();
+        }
+    }
+
+
+    private void showPermissionRationaleDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(requireContext());
+        builder.setTitle("Location Permission Required").setMessage("Please grant location permission to use this feature.").setPositiveButton("Grant", (dialog, which) -> requestLocationPermission()).setNegativeButton("Cancel", (dialog, which) -> dialog.dismiss()).show();
+    }
+
+    private void requestLocationPermission() {
+        ActivityCompat.requestPermissions(requireActivity(), new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, LOCATION_PERMISSION_REQUEST_CODE);
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        if (requestCode == LOCATION_PERMISSION_REQUEST_CODE) {
+            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                retrieveUserLocation();
+            } else {
+                Toast.makeText(requireContext(), "Location permission denied", Toast.LENGTH_SHORT).show();
+            }
+        }
+    }
+
+
+    private void sendLocationViaSMS(double latitude, double longitude) {
+        String googleMapsLink = locationManagerHelper.generateGoogleMapsLink(latitude, longitude);
+        String customMess = "Your known person is in emergency , We Phechaan is sending you his/her emergency message ahead.\n Message sent by him/her:\n" + CustomEmergencyMess + "\n" + "Emergency! I need help. My current location: " + googleMapsLink;
+
+        if (CustomEmergencyMess.equals("Enter your message")) {
+            customMess = "Your known person is in emergency , We Phechaan is sending you his/her emergency message ahead.\n" + "Emergency! I need help. My current location: " + googleMapsLink;
+        }
+
+        for (String phoneNumber : EmergencyContactNumber) {
+            try {
+                SmsManager smsManager = SmsManager.getDefault();
+                ArrayList<String> parts = smsManager.divideMessage(customMess);
+                smsManager.sendMultipartTextMessage(phoneNumber, null, parts, null, null);
+            } catch (Exception ex) {
+                Toast.makeText(getActivity(), "Error sending SMS: " + ex.getMessage(), Toast.LENGTH_LONG).show();
+                ex.printStackTrace();
+            }
+        }
+
+        Toast.makeText(getActivity(), "Messages Sent", Toast.LENGTH_LONG).show();
+    }
+
+
+    private void showEnableLocationSettingsDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(requireContext());
+        builder.setTitle("Location Settings").setMessage("Location is disabled. Do you want to open location settings?").setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                openLocationSettings();
+            }
+        }).setNegativeButton("No", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+        }).show();
+    }
+
+    private void openLocationSettings() {
+        Intent intent = new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
+        startActivity(intent);
+    }
+
 }
