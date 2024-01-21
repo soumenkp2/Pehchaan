@@ -12,7 +12,6 @@ import android.location.Location;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.telephony.SmsManager;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,12 +19,15 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
+
 import androidx.annotation.NonNull;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
+
 import com.example.pehchaan.R;
 import com.example.pehchaan.utils.LocationManagerHelper;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -33,8 +35,6 @@ import java.util.List;
 public class EmergencyFragment extends Fragment {
 
     private static final int LOCATION_PERMISSION_REQUEST_CODE = 1;
-    //    private static final int LOCATION_SETTINGS_REQUEST_CODE = 2;
-    private static final int PERMISSION_REQUEST_CODE = 100;
     private LocationManagerHelper locationManagerHelper;
 
 
@@ -279,27 +279,8 @@ public class EmergencyFragment extends Fragment {
                 }
                 CustomEmergencyMess = nummsg.getString("nummsg", "Enter your message");
 
+                // requesting or checking the location permission
                 locationRequest();
-
-
-                /*Intent sms1 = new Intent(Intent.ACTION_VIEW);
-                sms1.setData(Uri.parse("smsto:"));
-                sms1.setType("vnd.android-dir/mms-sms");
-                sms1.putExtra("address", number1);
-                sms1.putExtra("sms_body", "Your known person is in emergency , We Phechaan is sending you his/her emergency message ahead.\n" + message);
-
-                try
-                {
-
-                    startActivity(sms1);
-                    Toast.makeText(getActivity(),"sent sucessfully!",Toast.LENGTH_SHORT).show();
-                }
-                catch (android.content.ActivityNotFoundException ex)
-                {
-
-                    Toast.makeText(getActivity(),"oops! failed",Toast.LENGTH_SHORT).show();
-                }*/
-
 
             }
         });
