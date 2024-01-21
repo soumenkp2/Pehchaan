@@ -35,17 +35,12 @@ public class AddContactsActivity extends AppCompatActivity {
             public void onClick(View view) {
                 if (binding.firstNameET.getText().toString().isEmpty()) {
                     binding.firstNameET.setError("* Required");
-                } else if (binding.lastNameET.getText().toString().isEmpty()) {
-                    binding.lastNameET.setError("* Required");
-                } else if (binding.lastNameET.getText().toString().isEmpty()) {
-                    binding.lastNameET.setError("* Required");
-                } else if (binding.phoneNumET.getText().toString().isEmpty()) {
+                }else if (binding.phoneNumET.getText().toString().isEmpty()) {
                     binding.phoneNumET.setError("* Required");
-                } else if (binding.phoneNumET.getText().toString().length() < 10) {
-                    binding.phoneNumET.setError("Invalid Number");
-                } else {
+                }else {
                     addContact(binding.firstNameET.getText().toString() + " " + binding.firstNameET.getText().toString(),
                             binding.phoneNumET.getText().toString());
+                    finish();
                 }
             }
         });
