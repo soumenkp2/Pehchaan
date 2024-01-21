@@ -1,5 +1,7 @@
 package com.example.pehchaan.activity;
 
+import static android.app.PendingIntent.getActivity;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
@@ -142,15 +144,8 @@ public class MainActivity extends AppCompatActivity {
 
                 } else if (menuItem.getItemId() == R.id.nav_emergency) {
                     //Add contacts
-                    //Toast.makeText(MainActivity.this, "Soumen", Toast.LENGTH_SHORT).show();
-
-                    Intent i = new Intent(ContactsContract.Intents.Insert.ACTION);
-                    i.setType(ContactsContract.RawContacts.CONTENT_TYPE);
-
-                    i.putExtra(ContactsContract.Intents.Insert.PHONE, " ");
-                    i.putExtra(ContactsContract.Intents.Insert.PHONE_TYPE, ContactsContract.CommonDataKinds.Phone.TYPE_WORK);
-
-                    startActivity(i);
+                    Intent intent = new Intent(MainActivity.this, AddContactsActivity.class);
+                    startActivity(intent);
 
                 } else if (menuItem.getItemId() == R.id.nav_book) {
                     //Phone book

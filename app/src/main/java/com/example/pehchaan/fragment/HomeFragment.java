@@ -67,8 +67,7 @@ public class HomeFragment extends Fragment {
 //                i.putExtra(ContactsContract.Intents.Insert.PHONE_TYPE, ContactsContract.CommonDataKinds.Phone.TYPE_WORK);
 //
 //                startActivity(i);
-                Intent intent = new Intent(getActivity(), AddContactsActivity.class);
-                startActivity(intent);
+                addContact();
             }
         });
 
@@ -94,13 +93,7 @@ public class HomeFragment extends Fragment {
         add2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(ContactsContract.Intents.Insert.ACTION);
-                i.setType(ContactsContract.RawContacts.CONTENT_TYPE);
-
-                i.putExtra(ContactsContract.Intents.Insert.PHONE, " ");
-                i.putExtra(ContactsContract.Intents.Insert.PHONE_TYPE, ContactsContract.CommonDataKinds.Phone.TYPE_WORK);
-
-                startActivity(i);
+                addContact();
             }
         });
 
@@ -143,6 +136,7 @@ public class HomeFragment extends Fragment {
                 t.replace(R.id.container, new book());
                 t.commit();*/
 
+
                 Intent i = new Intent(getActivity(), MainActivity.class);
                 i.putExtra("booktomain", "book");
                 startActivity(i);
@@ -154,5 +148,10 @@ public class HomeFragment extends Fragment {
 
         return v;
 
+    }
+
+    private void addContact() {
+        Intent intent = new Intent(getActivity(), AddContactsActivity.class);
+        startActivity(intent);
     }
 }
