@@ -14,6 +14,7 @@ import android.Manifest;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.ContactsContract;
@@ -211,6 +212,18 @@ public class MainActivity extends AppCompatActivity {
                     }
 
 
+                }else if(menuItem.getItemId() == R.id.nav_report){
+                    String recipient = getString(R.string.email);
+                    String subject = getString(R.string.subject_for_email);
+                    String message = getString(R.string.email_body);
+
+                    Intent intent = new Intent(Intent.ACTION_SENDTO);
+                    intent.setData(Uri.parse("mailto:"));
+                    intent.putExtra(Intent.EXTRA_EMAIL, new String[]{recipient});
+                    intent.putExtra(Intent.EXTRA_SUBJECT, subject);
+                    intent.putExtra(Intent.EXTRA_TEXT, message);
+
+                    startActivity(intent);
                 }
 
 
