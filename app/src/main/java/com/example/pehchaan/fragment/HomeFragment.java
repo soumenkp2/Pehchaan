@@ -8,7 +8,6 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 
-import android.provider.ContactsContract;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -67,8 +66,7 @@ public class HomeFragment extends Fragment {
 //                i.putExtra(ContactsContract.Intents.Insert.PHONE_TYPE, ContactsContract.CommonDataKinds.Phone.TYPE_WORK);
 //
 //                startActivity(i);
-                Intent intent = new Intent(getActivity(), AddContactsActivity.class);
-                startActivity(intent);
+                openAddContactScreen();
             }
         });
 
@@ -94,13 +92,7 @@ public class HomeFragment extends Fragment {
         add2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(ContactsContract.Intents.Insert.ACTION);
-                i.setType(ContactsContract.RawContacts.CONTENT_TYPE);
-
-                i.putExtra(ContactsContract.Intents.Insert.PHONE, " ");
-                i.putExtra(ContactsContract.Intents.Insert.PHONE_TYPE, ContactsContract.CommonDataKinds.Phone.TYPE_WORK);
-
-                startActivity(i);
+                openAddContactScreen();
             }
         });
 
@@ -143,6 +135,7 @@ public class HomeFragment extends Fragment {
                 t.replace(R.id.container, new book());
                 t.commit();*/
 
+
                 Intent i = new Intent(getActivity(), MainActivity.class);
                 i.putExtra("booktomain", "book");
                 startActivity(i);
@@ -154,5 +147,10 @@ public class HomeFragment extends Fragment {
 
         return v;
 
+    }
+
+    private void openAddContactScreen() {
+        Intent intent = new Intent(getActivity(), AddContactsActivity.class);
+        startActivity(intent);
     }
 }
