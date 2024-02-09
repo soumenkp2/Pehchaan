@@ -22,6 +22,10 @@
             android:icon="@drawable/book"
             android:title="Phone Book" />
 
+        <item
+            android:id="@+id/nav_report"
+            android:icon="@drawable/ic_report_but"
+            android:title="Report Bug" />
 
     </group>
 </menu>

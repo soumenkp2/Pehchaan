@@ -8,5 +8,8 @@
     <string name="menu_home">About us</string>
     <string name="menu_gallery">Emergency</string>
     <string name="menu_slideshow">Add contacts</string>
+    <string name="email">Add Your Email Id\n\n</string>
+    <string name="subject_for_email">Report Bug - Pehchaan</string>
+    <string name="email_body">Body - \n</string>
 
 </resources>
